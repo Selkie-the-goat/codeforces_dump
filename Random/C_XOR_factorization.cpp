@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -44,4 +45,52 @@ void solve()
         }
         for(int i = 0; i < k; i++)
             cout << a[i] << (i+1 == k? '\n':' ');
+=======
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define nl "\n"
+#define all(x) x.begin(), x.end();
+string yes = "YES", no = "NO";
+typedef long long  ll;
+
+/* -----------------------COOKED.------------------------------*/
+void solve();
+int main() {
+    ios::sync_with_stdio(false); 
+    cin.tie(0); 
+    cout.tie(0);
+    //Input/Output go bRRRRRRRRR!!!!
+    int t; cin >> t;
+    while (t--) {
+        solve();
+    }
+
+    return 0;
+}
+void solve()
+{
+    int n, k;
+        cin >> n >> k;
+        int a[k]{}, p = 0;
+        if(k&1)
+            for(int i = 0; i < k; i++)
+                a[i] = n;
+        else {
+            for(int i = 30; i >= 0; i--) {
+                if(n >> i & 1) {
+                    for(int j = 0; j < k; j++)
+                        if(j != min(p, k-1))
+                            a[j] += (1 << i);
+                    if(p < k)
+                        p++;
+                } else
+                    for(int j = 0; j < p/2*2; j++)
+                        a[j] += (1 << i);
+            }
+        }
+        for(int i = 0; i < k; i++)
+            cout << a[i] << (i+1 == k? '\n':' ');
+>>>>>>> f4a3ee5404bcb997bd906211f57ce621ed833c48
 }

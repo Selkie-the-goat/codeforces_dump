@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -32,3 +33,6 @@ void solve()
     }
 
 }
+=======
+
+>>>>>>> f4a3ee5404bcb997bd906211f57ce621ed833c48
