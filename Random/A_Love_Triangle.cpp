@@ -16,7 +16,7 @@ int main() {
     cout.tie(0);
     //Input/Output go bRRRRRRRRR!!!!
     int t=1; 
-    cin >> t;
+    // cin >> t;
     while (t--) {
         solve();
     }
@@ -25,20 +25,20 @@ int main() {
 }
 /*---------------------☆*: .｡. o(≧▽≦)o .｡.:*☆----------------------*/
 
-void solve()
-{
-    int n , s , x;
-    cin >> n >> s >> x;
-    int sum_a=0;
-    for(int i = 0 ;i < n ;i++){
-        int temp;
-        cin >> temp;
-        sum_a += temp;
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> f(n + 1);
+    for (int i = 1; i <= n; i++) {
+        cin >> f[i];
     }
-    if (s - sum_a >= 0 && (s - sum_a) % x == 0) {
-            cout << "YES\n";
-        } else {
-            cout << "NO\n";
-        }
 
+    for (int i = 1; i <= n; i++) {
+        if (f[f[f[i]]] == i) {
+            cout << "YES\n";
+            return;
+        }
+    }
+
+    cout << "NO\n";    
 }
